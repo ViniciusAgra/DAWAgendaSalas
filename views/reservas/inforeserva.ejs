@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <title>CONSULTA DE USUÁRIO</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+
+</head>
+<body>
+    <h1>Prontuário do usuário: <%=usuario.Prontuario%></h1>
+    <h2><%=reserva.Sala%> <%=reserva.Curso%>
+        <%=reserva.Dia%> <%=reserva.Professor%>
+        <%=reserva.Inicio%> <%=reserva.Fim%>
+        <%=reserva.Descricao%> | <%=reserva.Nome%></h2>
+    <a href="/reservas">Voltar para o index</a>
+</body>
+
+<!-- Essa consulta permite que o usuário da sessão:
+ - Consulte o nome e prontuário de quem fez a reserva
+ - As informações da reserva
+
+O QUE EU QUERO
+- O usuário da sessão possa apagar e editar somente as reservas dele
+
+-->

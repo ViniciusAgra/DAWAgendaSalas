@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <title>PÁGINA DE RESERVAS</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+
+</head>
+<body>
+    <h1>Reservas</h1>
+    <ul>
+        <% for( let r of reservas ) { %>
+            <li>
+                <%=reserva.Sala%> <%=reserva.Curso%>
+                <%=reserva.Dia%> <%=reserva.Professor%>
+                <%=reserva.Inicio%> <%=reserva.Fim%>
+                <%=reserva.Descricao%> | <b><%=reserva.Nome%></b>
+                <a href="/reservas/<%=r.ID_Reserva%>">Detalhes</a>
+            </li>
+        <% } %>
+    </ul>
+
+    <a href="/reservas/nova">Nova reserva</a>
+    <a href="/usuarios/logoff">Logoff</a>
+</body>
+</html>

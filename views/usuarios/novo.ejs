@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <title>CADASTRO</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+
+</head>
+<body>
+    <h1>Novo usuário</h1>
+    <form action='/usuarios/novo' method='POST'>
+        <section>
+            <label>Digite o prontuário: </label>
+            <input type="text" id='prontuarioUsuario' placeholder="Prontuário" name='prontuario'>
+        </section>
+
+        <section>
+            <label>Digite o nome: </label>
+            <input type="text" id='nomeUsuario' placeholder="Nome" name='nome'>
+        </section>
+
+        <section>
+            <label>Digite a senha: </label>
+            <input type="password" id='senhaUsuario' placeholder="Senha" name='password'>
+        </section>
+        <button>Cadastrar</button>
+    </form>    
+</body>
+</html>
+
+<!--
+
+Cadastro de um novo usuário!
+
+-->

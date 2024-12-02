@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <title>EDIÇÃO DE USUÁRIO</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+
+</head>
+<body>
+    <h1>Perfil do usuário</h1>
+    <form action = "/usuarios/<%=usuario.Prontuario%>?_method=PATCH" method="POST">
+        <textarea name="usuario" id='' cols='30' rows='10'><%=usuario.Nome%></textarea>
+        <textarea name="usuario" id='' cols='30' rows='10'><%=usuario.Senha%></textarea>
+        <button>Salvar</button>
+    </form>
+</body>
+</html>
+
+<!--
+
+Esse ejs me permite editar o nome e a senha de qualquer usuário (pelo que entendi).
+
+-->

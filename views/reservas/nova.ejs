@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <title>NOVA RESERVA</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+
+</head>
+<body>
+    <h1>Faça uma nova reserva</h1>
+    <form action='/reservas' method='POST'>
+        <section>
+            <label>Digite o prontuário do usuário: </label>
+            <input type="text" id='prontuarioUsuario' placeholder="Prontuário" name='prontuario'>
+        </section>
+
+        <section>
+            <label>Informações da reserva:</label>
+            <p>
+                <ul>
+                    <li>Sala</li>
+                    <li>Curso</li>
+                    <li>Dia</li>
+                    <li>Professor</li>
+                    <li>Inicio</li>
+                    <li>Fim</li>
+                    <li>Descrição</li>
+                </ul>
+            </p>
+            <br>
+            <textarea id="sala" cols='30' rows='1' name='sala'></textarea>
+            <textarea id="curso" cols='30' rows='1' name='curso'></textarea>
+            <textarea id="dia" cols='30' rows='1' name='dia'></textarea>
+            <textarea id="professor" cols='30' rows='1' name='professor'></textarea>
+            <textarea id="inicio" cols='30' rows='1' name='inicio'></textarea>
+            <textarea id="fim" cols='30' rows='1' name='fim'></textarea>
+            <textarea id="descricao" cols='30' rows='1' name='descricao'></textarea>
+        </section>
+        <button>Enviar</button>
+    </form>    
+</body>
+</html>

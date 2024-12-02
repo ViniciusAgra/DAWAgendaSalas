@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <title>LOGIN</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+
+</head>
+<body>
+    <h1>Login</h1>
+    <form action='/usuarios/login' method='POST'>
+        <section>
+            <label>Digite seu prontuário: </label>
+            <input type="text" id='prontuarioUsuario' placeholder="Prontuário" name='prontuario'>
+        </section>
+
+        <section>
+            <label>Digite seu nome: </label>
+            <input type="text" id='nomeUsuario' placeholder="Nome" name='nome'>
+        </section>
+
+        <section>
+            <label>Digite sua senha: </label>
+            <input type="password" id='senhaUsuario' placeholder="Senha" name='password'>
+        </section>
+        <button>Entrar</button>
+    </form>
+
+    <button>
+        <a href="usuarios/novo">Não possui cadastro? Clique aqui</a>
+    </button>
+</body>
+</html>
+
+<!--
+
+Checa no banco se as informações inseridas acima
+batem com as informações presentes no banco de dados
+
+-->
