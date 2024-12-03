@@ -7,10 +7,23 @@
 
 </head>
 <body>
-    <h1>Perfil do usuário</h1>
+    <h1>Perfil do usuário e edição</h1>
     <form action = "/usuarios/<%=usuario.Prontuario%>?_method=PATCH" method="POST">
-        <textarea name="usuario" id='' cols='30' rows='10'><%=usuario.Nome%></textarea>
-        <textarea name="usuario" id='' cols='30' rows='10'><%=usuario.Senha%></textarea>
+
+        <h1>Informações:</h1>
+            <p>
+                <ul>
+                    <li>Nome</li>
+                    <li>Senha</li>
+                </ul>
+            </p>
+
+        <textarea name="Nome" id='' cols='30' rows='10'><%=usuario.Nome%></textarea>
+        <textarea name="Senha" id='' cols='30' rows='10'><%=usuario.Senha%></textarea>
+
+        <!-- Eu poderia colocar um label com input para receber
+         as informações de troca? se sim, como? -->
+         
         <button>Salvar</button>
     </form>
 </body>

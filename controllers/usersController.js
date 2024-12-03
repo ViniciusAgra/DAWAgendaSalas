@@ -1,4 +1,4 @@
-// NECESSITA DE ALTERAÇÕES PARA SE ADEQUAR AO BDSAS!!!!
+// FORAM FEITAS MUDANÇAS PARA ADEQUAÇÃO AO bdsas COM TABELAS "usuario" E "reserva" (03/12)
 
 const { Router } = require('express');
 const db = require('../db'); // Conexão com o banco de dados
@@ -61,11 +61,14 @@ roteador.post('/login', (req, res) => {
             return res.status(500).send('Erro ao fazer o login.');
         }
 
+        console.log("Resultados da consulta:", results);
         req.session.login = false;
         if(results.length > 0){
             req.session.login = true;
+            console.log("Login bem-sucedido. Sessão:", req.session.login);
             res.redirect('/reservas');
         }else{
+            console.log("Falha no login. Dados não encontrados.");
             res.redirect('/usuarios/login');
         }
     });

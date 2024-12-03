@@ -10,10 +10,10 @@
     <h1>Reservas</h1>
     <ul>
         <% for( let r of reservas ) { %>
-            <li>
-                <%=reserva.Sala%> <%=reserva.Curso%>
-                <%=reserva.Dia%> <%=reserva.Professor%>
-                <%=reserva.Inicio%> <%=reserva.Fim%>
+            <li> ID da reserva: <%=reserva.ID_Reserva%> -
+                <%=reserva.Sala%> -  <%=reserva.Curso%> -
+                <%=reserva.Dia%> - <%=reserva.Professor%> -
+                <%=reserva.Inicio%> - <%=reserva.Fim%> -
                 <%=reserva.Descricao%> | <b><%=reserva.Nome%></b>
                 <a href="/reservas/<%=r.ID_Reserva%>">Detalhes</a>
             </li>
@@ -24,3 +24,10 @@
     <a href="/usuarios/logoff">Logoff</a>
 </body>
 </html>
+
+<!--
+
+Mostra todas as reservas feitas, com todas as informações de cada
+reserva e nome do usuário que a fez.
+
+-->

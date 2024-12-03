@@ -1,7 +1,7 @@
 //APARENTEMENTE TUDO CERTO POIS CRIA A SESSÃO E DEMAIS INFORMAÇÕES IMPORTANTES
 
 const express = require('express');
-const {comments, users} = require('./controllers');
+const {reservas, users} = require('./controllers');
 const path = require('path');
 var methodOverride = require('method-override');
 
@@ -19,6 +19,7 @@ const sessionOptions = {
 app.use(session(sessionOptions));
 
 function secure_pass(req, res, next){
+    console.log("Verificando sessão:", req.session.login);
     if(req.session.login == true){
         next();
     } else {
@@ -47,7 +48,7 @@ app.use('/usuarios', users);
 app.use(secure_pass);
 //Ouve requisições em /comentarios passa a rota para o controller comments
 //Middleware
-app.use('/comentarios', comments);
+app.use('/reservas', reservas);
 
 
 

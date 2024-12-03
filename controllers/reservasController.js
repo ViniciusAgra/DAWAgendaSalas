@@ -43,7 +43,7 @@ roteador.get('/:ID_Reserva', (req, res) => {
         console.log(resultados[0]);
         res.render('reservas/index', { reserva: resultados[0] });
     });
-}); //CONTINUAR DAQUI !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+}); // ALTERADO EM inforeserva.ejs
 
 // Formulário para editar reserva
 roteador.get('/:ID_Reserva/edit', (req, res) => {
@@ -53,7 +53,7 @@ roteador.get('/:ID_Reserva/edit', (req, res) => {
         if (err) throw err;
         res.render('reservas/edit', { reserva: resultados[0] });
     });
-});
+}); // ALTERADO EM edit.ejs
 
 // Criar nova reserva
 roteador.post('/', (req, res) => {
@@ -75,7 +75,7 @@ roteador.post('/', (req, res) => {
             });
         }
     });
-});
+}); //ALTERADO EM nova.ejs
 
 // Atualizar reserva
 // Aparentemente esse trecho está errado porque só permite a atualização somente se TODOS OS CAMPOS forem alterados.
@@ -88,7 +88,7 @@ roteador.patch('/:ID_Reserva', (req, res) => {
         if (err) throw err;
         res.redirect('/reservas');
     });
-});
+}); // PRECISA DE REVISÃO
 
 /*Segue abaixo a solução dada pelo ChatGPT:
 
@@ -131,6 +131,6 @@ roteador.delete('/:ID_Reserva', (req, res) => {
         if (err) throw err;
         res.redirect('/reservas');
     });
-});
+}); // Não precisa de view
 
 module.exports = roteador;
