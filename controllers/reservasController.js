@@ -12,11 +12,7 @@ const roteador = Router();
 
 // Listar reservas
 roteador.get('/', (req, res) => {
-    const sql = `
-        SELECT reserva.*, usuario.Nome
-        FROM reserva
-        JOIN usuario ON reserva.Professor = usuario.Prontuario
-    `;
+    const sql = 'SELECT reserva.*, usuario.Nome FROM reserva JOIN usuario ON reserva.Professor = usuario.Prontuario';
     db.query(sql, (err, resultados) => {
         if (err) throw err;
         res.render('reservas/index', { reservas: resultados });
@@ -31,12 +27,7 @@ roteador.get('/nova', (req, res) => {
 // Visualizar reserva específica
 roteador.get('/:ID_Reserva', (req, res) => {
     const { ID_Reserva } = req.params;
-    const sql = `
-        SELECT reserva.*, usuario.Nome
-        FROM reserva
-        JOIN usuario ON reserva.Professor = usuario.Prontuario
-        WHERE reserva.ID_Reserva = ?
-    `;
+    const sql = 'SELECT reserva.*, usuario.Nome FROM reserva JOIN usuario ON reserva.Professor = usuario.Prontuario WHERE reserva.ID_Reserva = ?';
 
     db.query(sql, [ID_Reserva], (err, resultados) => {
         if (err) throw err;

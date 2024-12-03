@@ -47,18 +47,12 @@ roteador.get('/:Prontuario/edit', (req, res) => {
 
 // Processa o login do usuário
 roteador.post('/login', (req, res) => {
-    const {prontuario, nome, senha} = req.body;
+    const {prontuario, nome, password} = req.body;
 
-    const sql = `
-                SELECT * FROM usuario
-                WHERE Prontuario = ?
-                AND Nome = ? AND Senha = ?
-                LIMIT 1
-    `;
-
-    db.query(sql, [prontuario, nome, senha], (err, results)=>{
+    const sql = 'SELECT * FROM usuario WHERE Prontuario = ? AND Nome = ? AND Senha = ?';
+    db.query(sql, [prontuario, nome, password], (err, results)=>{
         if(err){
-            return res.status(500).send('Erro ao fazer o login.');
+            return res.send('Erro ao fazer o login.', err);
         }
 
         console.log("Resultados da consulta:", results);

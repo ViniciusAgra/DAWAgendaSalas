@@ -8,7 +8,7 @@ const mysql = require('mysql');
 const dbConfig = {
     host: 'localhost',
     user: 'root',
-    password: '277353', // ALTERAR SENHA CONFORME PC QUE ESTÁ
+    password: 'aluno123', // ALTERAR SENHA CONFORME PC QUE ESTÁ
     
     // Não especificamos o database aqui para permitir a criação caso ele não exista
 };

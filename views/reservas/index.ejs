@@ -10,11 +10,11 @@
     <h1>Reservas</h1>
     <ul>
         <% for( let r of reservas ) { %>
-            <li> ID da reserva: <%=reserva.ID_Reserva%> -
-                <%=reserva.Sala%> -  <%=reserva.Curso%> -
-                <%=reserva.Dia%> - <%=reserva.Professor%> -
-                <%=reserva.Inicio%> - <%=reserva.Fim%> -
-                <%=reserva.Descricao%> | <b><%=reserva.Nome%></b>
+            <li> ID da reserva: <%=r.ID_Reserva%> -
+                <%=r.Sala%> -  <%=r.Curso%> -
+                <%=r.Dia%> - <%=r.Professor%> -
+                <%=r.Inicio%> - <%=r.Fim%> -
+                <%=r.Descricao%> | <b><%=r.Nome%></b>
                 <a href="/reservas/<%=r.ID_Reserva%>">Detalhes</a>
             </li>
         <% } %>
