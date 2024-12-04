@@ -10,15 +10,37 @@
     <h1>Reservas</h1>
     <ul>
         <% for( let r of reservas ) { %>
-            <li> ID da reserva: <%=r.ID_Reserva%> -
-                <%=r.Sala%> -  <%=r.Curso%> -
-                <%=r.Dia%> - <%=r.Professor%> -
-                <%=r.Inicio%> - <%=r.Fim%> -
-                <%=r.Descricao%> | <b><%=r.Nome%></b>
-                <a href="/reservas/<%=r.ID_Reserva%>">Detalhes</a>
+            <li> ID da reserva: <%=r.ID_Reserva%> | Nome do professor: <b><%=r.Nome%></b>
+                <br> 
+
+                <ul>
+
+                    <li> Sala: <%=r.Sala%></li>
+
+                    <li> Curso: <%=r.Curso%></li>
+
+                    <li> Dia: <%=new Date(r.Dia).toLocaleDateString('pt-BR') %></li>
+
+                    <li> Prontuário do professor: <%=r.Professor%></li>
+
+                    <li> 
+                        Início: <%=r.Inicio%>
+                        <br/>
+                        Fim: <%=r.Fim%>
+                    
+                    </li>
+
+                    <li> Descrição da aula: <%=r.Descricao%></li>
+
+                    <li> Sala: <%=r.Sala%></li>
+
+                </ul>
+
             </li>
+            <br/>
         <% } %>
     </ul>
+    
 
     <a href="/reservas/nova">Nova reserva</a>
     <a href="/usuarios/logoff">Logoff</a>

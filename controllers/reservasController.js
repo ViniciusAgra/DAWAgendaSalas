@@ -32,7 +32,7 @@ roteador.get('/:ID_Reserva', (req, res) => {
     db.query(sql, [ID_Reserva], (err, resultados) => {
         if (err) throw err;
         console.log(resultados[0]);
-        res.render('reservas/index', { reserva: resultados[0] });
+        res.render('reservas/index', { reservas: resultados[0] });
     });
 }); // ALTERADO EM inforeserva.ejs
 
@@ -42,25 +42,25 @@ roteador.get('/:ID_Reserva/edit', (req, res) => {
     const sql = 'SELECT * FROM reserva WHERE ID_Reserva = ?';
     db.query(sql, [id], (err, resultados) => {
         if (err) throw err;
-        res.render('reservas/edit', { reserva: resultados[0] });
+        res.render('reservas/edit', { reservas: resultados[0] });
     });
 }); // ALTERADO EM edit.ejs
 
 // Criar nova reserva
 roteador.post('/', (req, res) => {
-    const { Nome, reserva } = req.body;
-    const sqlUsuario = 'SELECT Prontuario FROM usuario WHERE Nome = ?';
+    const { Prontuario, Sala, Curso, Dia, Professor, Inicio, Fim, Descricao } = req.body;
+    const sqlUsuario = 'SELECT Nome FROM usuario WHERE Prontuario = ?';
     
-    db.query(sqlUsuario, [Nome], (err, resultados) => {
+    db.query(sqlUsuario, [Prontuario], (err, resultados) => {
         if (err) throw err;
 
         if (resultados.length === 0) {
             res.send('<h1>Usuário não encontrado</h1>');
         } else {
-            const usuarioProntuario = resultados[0].Prontuario;
+            const usuarioNome = resultados[0].Prontuario;
             const sqlReserva = 'INSERT INTO reserva (Sala, Curso, Dia, Professor, Inicio, Fim, Descricao) VALUES (?, ?, ?, ?, ?, ?, ?)';
 
-            db.query(sqlReserva, [reserva, usuarioProntuario], (err) => { //???DUVIDA
+            db.query(sqlReserva, [Sala, Curso, Dia, Professor, Inicio, Fim, Descricao, usuarioNome], (err) => {
                 if (err) throw err;
                 res.redirect('/reservas');
             });

@@ -10,38 +10,41 @@
     <h1>Faça uma nova reserva</h1>
     <form action='/reservas' method='POST'>
         <section>
-            <label>Digite o prontuário do usuário: </label>
-            <input type="text" id='prontuarioUsuario' placeholder="Prontuário" name='prontuario'>
+            <label>Digite seu prontuário: </label>
+            <input type="text" id='prontuarioUsuario' placeholder="Prontuário" name='Prontuario'>
         </section>
 
         <section>
             <h1>Informações da reserva:</h1>
-            <p>
-                <ul>
-                    <li>Sala</li>
-                    <li>Curso</li>
-                    <li>Dia</li>
-                    <li>Professor</li>
-                    <li>Inicio</li>
-                    <li>Fim</li>
-                    <li>Descrição</li>
-                </ul>
-            </p>
-            <br>
-            <textarea id="sala" cols='30' rows='1' name='sala'></textarea>
-            <br>
-            <textarea id="curso" cols='30' rows='1' name='curso'></textarea>
-            <br>
-            <textarea id="dia" cols='30' rows='1' name='dia'></textarea>
-            <br>
-            <textarea id="professor" cols='30' rows='1' name='professor'></textarea>
-            <br>
-            <textarea id="inicio" cols='30' rows='1' name='inicio'></textarea>
-            <br>
-            <textarea id="fim" cols='30' rows='1' name='fim'></textarea>
-            <br>
-            <textarea id="descricao" cols='30' rows='1' name='descricao'></textarea>
-            <br>
+
+            <label>Sala: </label>
+            <input type="text" id='sala' placeholder="Sala" name='Sala'>
+            <br/>
+            <br/>
+            <label>Curso: </label>
+            <input type="text" id='curso' placeholder="Curso" name='Curso'>
+            <br/>
+            <br/>
+            <label>Dia: </label>
+            <input type="text" id='dia' placeholder="YYYY-MM-DD" name='Dia'>
+            <br/>
+            <br/>
+            <label>Prontuário: </label>
+            <input type="text" id='professor' placeholder="JC..." name='Professor'>
+            <br/>
+            <br/>
+            <label>Horário de início: </label>
+            <input type="text" id='inicio' placeholder="Horário de início" name='Inicio'>
+            <br/>
+            <br/>
+            <label>Horário de término: </label>
+            <input type="text" id='fim' placeholder="Horário de término" name='Fim'>
+            <br/>
+            <br/>
+            <label>Descrição da aula: </label>
+            <input type="text" id='descricao' placeholder="Descrição" name='Descricao'>
+            <br/>
+            <br/>
         </section>
         <button>Enviar</button>
     </form>    
